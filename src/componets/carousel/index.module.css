@@ -1,0 +1,51 @@
+.carouselItem {
+  height: 400px;
+}
+
+.containerBanner1 {
+  background: #5e698fbe;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.containerBanner2 {
+  background: #d6b98ebe;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.containerBanner3 {
+  background: #809680be;
+  display: flex;
+  justify-content: end;
+  height: 100%;
+}
+
+.containerBanner1 img {
+  height: 100%;
+  object-fit: contain;
+  background-position-x: 80%;
+  opacity: 0.5;
+}
+
+.containerBanner2 img {
+  opacity: 0.5;
+}
+
+.containerBanner3 img {
+  opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+  .containerBanner3 {
+    background: #809680be;
+    justify-content: center;
+  }
+  .containerBanner3 img {
+    height: 100%;
+    background-position-x: 180px;
+    margin-right: 100%;
+  }
+}
