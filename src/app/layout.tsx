@@ -1,8 +1,42 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import { business } from "@/data/business";
 import "./globals.css";
 
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+
+const title = `${business.name} | ${business.segment}`;
+const description = `Site institucional de ${business.name} – ${business.segment}. Atendimento personalizado com hora marcada.`;
+
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://monicabonifacio.com.br";
+
 export const metadata: Metadata = {
-  title: "Beauty Salon",
+  metadataBase: new URL(siteUrl),
+  title,
+  description,
+  keywords: [
+    "Monica Bonifácio",
+    "Design de sobrancelhas",
+    "Extensão de cílios",
+    "Lash Designer",
+    "Maquiagem profissional",
+    "Penteados",
+    "Sobrancelhas",
+  ],
+  openGraph: {
+    title,
+    description,
+    type: "website",
+    locale: "pt_BR",
+    siteName: business.name,
+    images: [
+      {
+        url: business.logo,
+        alt: `Logo – ${business.name}`,
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -11,25 +45,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR">
-      <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        {/* <link
-          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-          rel="stylesheet"
-          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-          crossOrigin="anonymous"
-        /> */}
-      </head>
-      <body>
-        {children}
-        {/* <script
-          src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-          integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-          crossOrigin="anonymous"
-        ></script> */}
-      </body>
+    <html lang="pt-BR" className={inter.variable}>
+      <body>{children}</body>
     </html>
   );
 }

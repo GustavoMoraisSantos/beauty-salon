@@ -1,14 +1,23 @@
-import UncontrolledCarousel from "@/componets/carousel";
-import Header from "@/componets/header";
-import Section2 from "@/componets/section-2";
-import "bootstrap/dist/css/bootstrap.min.css";
+import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import About from "@/components/About";
+import Services from "@/components/Services";
+import Differentials from "@/components/Differentials";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div>
+    <>
       <Header />
-      <UncontrolledCarousel/>
-      <Section2/>
-    </div>
+      <main>
+        <Hero />
+        <About />
+        <Services />
+        <Differentials />
+        <Contact />
+      </main>
+      <Footer />
+    </>
   );
 }
