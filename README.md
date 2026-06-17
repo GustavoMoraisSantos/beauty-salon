@@ -1,38 +1,46 @@
-# Salão de Beleza Encanto 💇‍♀️💅
+# Monica Bonifácio – Landing Page
 
-Bem-vindo ao Salão de Beleza Encanto, onde a beleza encontra o seu lugar especial! ✨💖
+Landing page institucional para **Monica Bonifácio**, especialista em design de sobrancelhas, extensão de cílios (Lash Designer), maquiagem profissional e penteados.
 
-<!-- ![Salão de Beleza Encanto](https://link_para_uma_imagem_do_seu_salon.jpg) -->
+## Stack
 
-## Visão Geral
+- **Next.js 14** (App Router)
+- **TypeScript**
+- **Tailwind CSS**
+- **React 18**
 
-O Salão de Beleza Encanto é um espaço dedicado a oferecer serviços excepcionais de beleza, desde cortes de cabelo modernos até tratamentos de unhas de alta qualidade.
-<!-- 
-## Live Preview
+## Estrutura
 
-Confira as tendências da moda e agende seus serviços no [Live Preview](https://salao-encanto.vercel.app/). -->
+```
+src/
+├── app/          → Layout, page e estilos globais
+├── components/   → Componentes modulares (Header, Hero, About, Services, etc.)
+└── data/         → Dados centralizados do negócio (business.ts)
+```
 
-## Serviços Oferecidos
+## Instalação
 
-- **Cortes de Cabelo Modernos**: Dos clássicos aos cortes mais modernos, nossos profissionais estão prontos para transformar seu visual.
+```bash
+git clone https://github.com/GustavoMoraisSantos/beauty-salon.git
+cd beauty-salon
+npm install
+```
 
-- **Tratamentos de Unhas Profissionais**: Experimente tratamentos de unhas de qualidade que realçam sua beleza natural.
+## Desenvolvimento
 
-- **Maquiagem e Estilo**: Descubra o poder da maquiagem e do estilo para realçar sua beleza única.
+```bash
+npm run dev
+```
 
+Acesse [http://localhost:3000](http://localhost:3000).
 
-## Instalação Local
+## Build
 
-1. Clone este repositório:
+```bash
+npm run build
+npm start
+```
 
-   ```bash
-   git clone https://github.com/seu-usuario/salao-encanto.git
-   cd salao-encanto
-   npm install
-   ```
+## Personalização
 
-2. Inicie o servidor de desenvolvimento:
-   ```bash
-   npm start
-   ```
-3. Abra seu navegador e acesse http://localhost:3000.
+Todas as informações do negócio (nome, serviços, contatos, textos) estão centralizadas em `src/data/business.ts`. Para atualizar o site, basta editar esse arquivo.
