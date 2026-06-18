@@ -5,7 +5,7 @@
  * este arquivo — para atualizar o site basta editar os valores abaixo.
  */
 
-const whatsappNumber = "5544999442114";
+const whatsappNumber = "5544998773629";
 const whatsappMessage =
   "Olá! Vim pelo site e gostaria de agendar um horário.";
 
@@ -20,8 +20,8 @@ export const business = {
   profilePhoto: "/monica-perfil.png",
 
   phone: {
-    display: "(44) 99944-2114",
-    raw: "5544999442114",
+    display: "(44) 99877-3629",
+    raw: "5544998773629",
   },
 
   whatsapp: {
@@ -67,11 +67,13 @@ export const services = [
   {
     title: "Penteados",
     text: "Penteados sofisticados para casamentos, festas e ocasiões especiais.",
-    image: "/galeria/noiva-penteado.png",
+    image: "/galeria/penteado-noiva.png",
+    objectPosition: "top",
   },
 ] as const;
 
 export const galleryItems = [
+  { image: "/galeria/penteado-noiva.png", alt: "Penteado de noiva" },
   { image: "/galeria/noiva-penteado.png", alt: "Noiva com penteado elegante" },
   { image: "/galeria/noiva-maquiagem.png", alt: "Maquiagem para noiva" },
   { image: "/galeria/sobrancelhas.png", alt: "Design de sobrancelhas" },
