@@ -30,6 +30,7 @@ export default function Services() {
                     alt={service.title}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    style={{ objectPosition: "objectPosition" in service ? service.objectPosition : "center" }}
                     sizes="(max-width: 640px) 100vw, 50vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-dark/80 via-dark/20 to-transparent" />
