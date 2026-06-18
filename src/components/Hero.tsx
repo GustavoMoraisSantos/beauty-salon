@@ -1,71 +1,54 @@
-import { business, heroBadges } from "@/data/business";
-import WhatsAppButton from "./WhatsAppButton";
+import Image from "next/image";
+import { business } from "@/data/business";
 
 export default function Hero() {
   return (
     <section
       id="inicio"
-      className="relative overflow-hidden bg-ink pt-28 md:pt-36"
+      className="relative min-h-screen pt-20"
     >
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -top-24 right-0 h-96 w-96 rounded-full bg-brand/10 blur-3xl"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -bottom-32 -left-24 h-96 w-96 rounded-full bg-brand/5 blur-3xl"
-      />
-
-      <div className="container-px relative grid items-center gap-12 pb-20 md:grid-cols-2 md:pb-28">
-        <div className="animate-fade-in-up">
-          <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-brand">
+      <div className="container-px grid min-h-[calc(100vh-5rem)] items-center gap-12 lg:grid-cols-2">
+        <div className="animate-fade-in-up py-12 lg:py-20">
+          <p className="mb-6 text-sm font-semibold uppercase tracking-[0.2em] text-accent">
             {business.segment}
           </p>
-          <h1 className="text-3xl font-extrabold leading-tight text-cloud sm:text-4xl md:text-5xl">
-            {business.tagline},{" "}
-            <span className="text-brand">com cuidado e técnica</span>
+          <h1 className="font-display text-4xl font-bold leading-[1.1] text-dark sm:text-5xl lg:text-6xl">
+            {business.tagline}
           </h1>
-          <p className="mt-5 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
+          <p className="mt-6 max-w-md text-lg leading-relaxed text-muted">
             {business.description}
           </p>
-
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <WhatsAppButton />
-            <a href="#servicos" className="btn-secondary">
-              Conheça os serviços
+          <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+            <a
+              href={business.whatsapp.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+            >
+              Agendar horário
+            </a>
+            <a href="#portfolio" className="btn-outline">
+              Ver portfólio
             </a>
           </div>
-
-          <ul className="mt-10 grid grid-cols-2 gap-3 sm:max-w-lg">
-            {heroBadges.map((badge) => (
-              <li
-                key={badge}
-                className="rounded-xl border border-white/5 bg-ink-soft px-4 py-3 text-sm font-medium text-cloud"
-              >
-                {badge}
-              </li>
-            ))}
-          </ul>
         </div>
 
-        <div className="flex justify-center md:justify-end">
-          <div className="relative flex h-64 w-64 items-center justify-center rounded-3xl border border-brand/20 bg-ink-soft p-8 shadow-2xl sm:h-80 sm:w-80">
-            <div
-              aria-hidden="true"
-              className="absolute inset-0 rounded-3xl bg-gradient-to-br from-brand/10 to-transparent"
+        <div className="relative hidden lg:block">
+          <div className="animate-fade-in relative aspect-[3/4] w-full max-w-md ml-auto overflow-hidden">
+            <div className="absolute inset-0 border-2 border-accent/20 translate-x-4 translate-y-4" />
+            <Image
+              src={business.profilePhoto}
+              alt={business.name}
+              fill
+              className="object-cover"
+              priority
+              sizes="(max-width: 1024px) 0vw, 400px"
             />
-            <div className="relative flex flex-col items-center gap-4 text-center">
-              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-brand/20">
-                <svg viewBox="0 0 24 24" className="h-10 w-10 text-brand" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456z" />
-                </svg>
-              </div>
-              <p className="text-lg font-bold text-cloud">{business.shortName}</p>
-              <p className="text-sm text-muted">{business.segment}</p>
-            </div>
           </div>
         </div>
       </div>
+
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
     </section>
   );
 }
