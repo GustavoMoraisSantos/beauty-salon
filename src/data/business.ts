@@ -6,8 +6,7 @@
  */
 
 const whatsappNumber = "5544998773629";
-const whatsappMessage =
-  "Olá! Vim pelo site e gostaria de agendar um horário.";
+const whatsappMessage = "Olá! Vim pelo site e gostaria de agendar um horário.";
 
 export const business = {
   name: "Monica Bonifácio",
@@ -79,6 +78,7 @@ export const galleryItems = [
   { image: "/galeria/sobrancelhas.png", alt: "Design de sobrancelhas" },
   { image: "/galeria/modelo-ruiva.png", alt: "Maquiagem editorial" },
   { image: "/galeria/cilios-aplicacao.png", alt: "Extensão de cílios" },
+  { image: "/galeria/marina.jpeg", alt: "Marina" },
 ] as const;
 
 export const navLinks = [
