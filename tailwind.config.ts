@@ -8,28 +8,38 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: {
-          DEFAULT: "#1a1118",
-          soft: "#241c22",
+        base: {
+          DEFAULT: "#FFFBF8",
+          soft: "#FFF5EE",
         },
-        brand: {
-          DEFAULT: "#D4A0A0",
-          hover: "#E8B4B4",
+        accent: {
+          DEFAULT: "#B8860B",
+          light: "#D4A843",
+          subtle: "#F5ECD7",
         },
-        cloud: "#F9F4F4",
-        muted: "#C0B3B3",
+        dark: {
+          DEFAULT: "#1C1917",
+          soft: "#44403C",
+        },
+        muted: "#78716C",
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        display: ["var(--font-playfair)", "Georgia", "serif"],
       },
       keyframes: {
         "fade-in-up": {
-          "0%": { opacity: "0", transform: "translateY(16px)" },
+          "0%": { opacity: "0", transform: "translateY(20px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        "fade-in": {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
         },
       },
       animation: {
-        "fade-in-up": "fade-in-up 0.6s ease-out both",
+        "fade-in-up": "fade-in-up 0.8s ease-out both",
+        "fade-in": "fade-in 1s ease-out both",
       },
     },
   },

@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import { business } from "@/data/business";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+});
 
 const title = `${business.name} | ${business.segment}`;
-const description = `Site institucional de ${business.name} – ${business.segment}. Atendimento personalizado com hora marcada.`;
+const description = `${business.name} – ${business.segment}. Atendimento personalizado com hora marcada.`;
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://monicabonifacio.com.br";
@@ -22,7 +26,6 @@ export const metadata: Metadata = {
     "Lash Designer",
     "Maquiagem profissional",
     "Penteados",
-    "Sobrancelhas",
   ],
   openGraph: {
     title,
@@ -30,12 +33,6 @@ export const metadata: Metadata = {
     type: "website",
     locale: "pt_BR",
     siteName: business.name,
-    images: [
-      {
-        url: business.logo,
-        alt: `Logo – ${business.name}`,
-      },
-    ],
   },
 };
 
@@ -45,7 +42,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className={inter.variable}>
+    <html lang="pt-BR" className={`${inter.variable} ${playfair.variable}`}>
       <body>{children}</body>
     </html>
   );
